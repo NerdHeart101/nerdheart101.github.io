@@ -743,6 +743,20 @@ console.log(&#39;Weather App was installed.&#39;, evt);</code></pre>
       //document.getElementById("arrow-back").style.pointerEvents="none";
       //document.getElementById("arrow-back").style.cursor="default";
     }, false);
+    
+      // This is to override the X / close handling on the page, unfortunately default handling
+    // is not wanted and now way to change, see this issue for more info:
+    // https://github.com/googlecodelabs/tools/issues/103
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById("done").href="https://roboraiderg.netlify.app/"; 
+
+      document.getElementById("done").addEventListener( 'click', function() { 
+        window.history.back();
+      }); 
+      //document.getElementById("arrow-back").style.display = "none";
+      //document.getElementById("arrow-back").style.pointerEvents="none";
+      //document.getElementById("arrow-back").style.cursor="default";
+    }, false);
   </script>
 
 </body>
